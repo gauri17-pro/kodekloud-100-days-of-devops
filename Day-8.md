@@ -1,0 +1,3 @@
+## Install Ansible using pip3
+
+```sudo pip3 install ansible==4.9.0```
