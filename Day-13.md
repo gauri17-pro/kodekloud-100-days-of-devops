@@ -8,7 +8,7 @@ We have one of our websites up and running on our Nautilus infrastructure in Str
 #### 2. Block incoming port 8082 on all app servers for everyone except the LBR (load balancer) host stlb01. Either DROP or REJECT is fine.
 `getent hosts stlb01`
 `LB_IP=$(getent hosts stlb01 | awk '{print $1; exit}')`
-`iptables -L INPUT -n`
+```sudo iptables -L INPUT -n```
 `sudo iptables -I INPUT 1 -p tcp -s "$LB_IP" --dport 8082 -j ACCEPT`
 `sudo iptables -I INPUT 2 -p tcp --dport 8082 -j DROP`
 `sudo iptables-save | sudo tee /etc/sysconfig/iptables`
