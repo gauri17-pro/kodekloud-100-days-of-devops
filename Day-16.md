@@ -26,9 +26,9 @@ http {
     include /etc/nginx/conf.d/*.conf;
 
     upstream app_servers {
-        server stapp01:8080;
-        server stapp02:8080;
-        server stapp03:8080;
+        server stapp01:3000;
+        server stapp02:3000;
+        server stapp03:3000;
     }
 
     server {
